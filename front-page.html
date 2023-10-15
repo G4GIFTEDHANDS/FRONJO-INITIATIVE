@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fronjo-Initiative Banking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fronjo-Initiative Banking App</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#login">Login/Sign Up</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="login">
+        <h2>Login/Sign Up</h2>
+        <div class="form-container">
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Learn more about Fronjo-Initiative Banking App and our mission.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a range of banking services, including withdrawal, transfer, bill payment, airtime top-up, and data recharge.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to contact us.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Fronjo-Initiative</p>
+    </footer>
+    <script>
+    function authenticateUser() {
+        // Get the username and password entered by the user
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Perform basic authentication (replace with secure server-side authentication)
+        if (username === "your_username" && password === "your_password") {
+            // Successful login
+            alert("Login successful! You can now access the app features.");
+        } else {
+            // Failed login
+            alert("Invalid username or password. Please try again.");
+        }
+    }
+</script>
+
+</body>
+</html>
+
