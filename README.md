@@ -11,20 +11,99 @@ Alx website portfolio project
 
 # FRONJO-INITIATIVE
 
- The name was derived from the first two letters of the Author's Name. It's aim is to  explore and exhibit the essential facets of banking applications, including account management, transactions, and data security, all within an intuitive and user-friendly interface. Leveraging industry-standard technologies, our project showcases the culmination of knowledge, creativity, and collaboration.
+This is an Online Banking Concept created as Alx final project using Django Web Framework.
 
 
-## Banking-Application-using-Java
-Basic command line banking application. It is just a introduction mini project.
+## Features
+
+* Create Bank Account.
+* Deposit & Withdraw Money
+* Bank Account Type Support (e.g. Current Account, Savings Account)
+* Interest calculation depending on the Bank Account type
+* Transaction report with a date range filter 
+* See balance after every transaction in the Transaction Report
+* Calculate Monthly Interest Using Celery Scheduled tasks
+* More efficient and accurate interest calculation and balance update
+* Ability to add Minimum and Maximum Transaction amount restriction
+* Modern UI with Tailwind CSS
 
 
-### OUTPUT :
+## Prerequisites
 
-Banking Menu: 
-Select any one option from below. 
-1) Add Customer
-2) Change Customer Name
-3) Check Account Balance
-4) Update Account Balance
-5) Summary of All Accounts
-6) Quit
+Be sure you have the following installed on your development machine:
+
++ Python >= 3.7
++ Redis Server
++ Git
++ pip
++ Virtualenv (virtualenvwrapper is recommended)
+
+## Requirements
+
++ celery==4.4.7
++ Django==3.2
++ django-celery-beat==2.0.0
++ python-dateutil==2.8.1
++ redis==3.5.3
+
+## Install Redis Server
+
+[Redis Quick Start](https://redis.io/topics/quickstart)
+
+Run Redis server
+```bash
+redis-server
+```
+
+## Project Installation
+
+To setup a local development environment:
+
+Create a virtual environment in which to install Python pip packages. With [virtualenv](https://pypi.python.org/pypi/virtualenv),
+```bash
+virtualenv venv            # create a virtualenv
+source venv/bin/activate   # activate the Python virtualenv 
+```
+
+or with [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/),
+```bash
+mkvirtualenv -p python3 {{project_name}}   # create and activate environment
+workon {{project_name}}   # reactivate existing environment
+```
+
+Clone GitHub Project,
+```bash
+git@github.com: G4GIFTEDHANS/FRONJO-INITIATIVE.git
+
+cd FRONJO-INITIATIVE 
+```
+
+Install development dependencies,
+```bash
+pip install -r requirements.txt
+```
+
+Migrate Database,
+```bash
+python manage.py migrate
+```
+
+Run the web application locally,
+```bash
+python manage.py runserver # 127.0.0.1:8000
+```
+
+Create Superuser,
+```bash
+python manage.py createsuperuser
+```
+
+Run Celery
+(Different Terminal Window with Virtual Environment Activated)
+```bash
+celery -A banking_system worker -l info
+
+celery -A banking_system beat -l info
+```
+
+
